@@ -58,8 +58,6 @@ export class UsuarioController {
     if (this.usuario.length > 0) {
       for (let i = 0; i < this.usuario.length; i++) {
         if (this.usuario[i].nombreUsuario == nombreUsuario) {
-          this.usuario[i].fechaRegistro = usuario.fechaRegistro;
-          this.usuario[i].email = usuario.email;
           this.usuario[i].fotoPerfil = usuario.fotoPerfil;
           response.status(200).send(usuario);
         }
@@ -81,5 +79,31 @@ export class UsuarioController {
       }
     }
     response.status(404).send('Usuario no encontrado');
+  }
+  //Metodo para seguir a un usuario
+  @Post(':nombreUsuario/seguir/:nombreUsuarioSeguir')
+  seguirUsuario(
+    @Param('nombreUsuario') nombreUsuario: string,
+    @Param('nombreUsuarioSeguir') nombreUsuarioSeguir: string,
+    @Res() response,
+  ) {
+    if (this.usuario.length > 0) {
+      let usuarioEncontrado = false;
+      let usuarioSeguirEncontrado = false;
+      for (let i = 0; i < this.usuario.length; i++) {
+        if (this.usuario[i].nombreUsuario == nombreUsuario) {
+          usuarioEncontrado = true;
+        }
+        if (this.usuario[i].nombreUsuario == nombreUsuarioSeguir) {
+          usuarioSeguirEncontrado = true;
+          this.usuario[i].seguidores.push(nombreUsuario);
+        }
+      }
+      if (usuarioEncontrado && usuarioSeguirEncontrado) {
+        response.status(200).send('Usuario seguido');
+      } else {
+        response.status(404).send('Usuario no encontrado');
+      }
+    }
   }
 } // fin de la clase UsuarioController

@@ -133,14 +133,15 @@ Identifica las clases necesarias según el escenario planteado y por cada clase 
 ✅Foto
 ✅Comentario
 
-Haz un commit con el mensaje “Modelo creado” y luego haz un push al repositorio de github.
-Crea una nueva rama en tu repositorio local llamada “feature_usuarios”
-Crea el controlador para Usuarios que permita realizar las siguientes acciones
-Registrar un nuevo usuario
-Obtener un usuario según su nombreUsuario
-Obtener todos los usuarios
-Eliminar un usuario según su nombreUsuario
-Editar foto de perfil
+✅ Haz un commit con el mensaje “Modelo creado” y luego haz un push al repositorio de github.
+✅ Crea una nueva rama en tu repositorio local llamada “feature_usuarios”
+✅ Crea el controlador para Usuarios que permita realizar las siguientes acciones
+✅ Registrar un nuevo usuario
+✅ Obtener un usuario según su nombreUsuario
+✅ Obtener todos los usuarios
+✅ Eliminar un usuario según su nombreUsuario
+✅ Editar foto de perfil
+
 Seguir a un usuario
 Crea un servicio para almacenar los datos de los usuarios y que permita dar soporte a las acciones que maneja el controlador de usuarios
 Registrar un nuevo usuario (Verificar si existe el usuario según el correo ingresado y que el nombreUsuario sea único)
